@@ -1,26 +1,3 @@
-## [17.2.2]
-
-* Bumped dependency on `flutter_local_notifications_linux` to 4.0.1. Updated app-facing packaging to no longer create and register the Linux implementation as this will now be handled by the `flutter_local_notifications_linux` package itself
-* [Android] fixed issue where notifications with tags weren't cancelled when action was invoked when the `autoCancel` property for the action was set to `true`. Thanks to the PR from [Remco Anker](https://github.com/remcoanker)
-
-## [17.2.1+2]
-
-*  Updated Gradle setup readme section around specifying AGP version to include link to Flutter documentation for apps that are using the declarative Plugin DSL syntax
-
-## [17.2.1+1]
-
-* Fixed accidental change done in example app as part of 17.2.0 where it made use of `SCHEDULE_EXACT_ALARM` permission instead of `USE_EXACT_ALARM`
-
-## [17.2.1]
-
-* [Android] fixed issue [#2329](https://github.com/MaikuB/flutter_local_notifications/issues/2329) where a compilation issue could occur due to ambiguity between Android APIs being called. Thanks to the PR from [Greg Price](https://github.com/gnprice)
-
-## [17.2.0]
-
-* [Android][iOS][macOS] added `periodicallyShowWithDuration()` method that allows for having a notification periodically shown based on a specified duration. The duration will need to be at least a minute. Thanks to the PR from [Mateusz Łuczak](https://github.com/mateuszluczak1996)
-* [Android] added the `requestFullScreenIntentPermission()` to the `AndroidFlutterNotificationsPlugin` class. This allows app to request the full-screen intent permission. Updated the documentation around full-screen intent notifications accordingly as well
-* Added a comment to the `AndroidManifest.xml` file of the example to state that it requests the `USE_EXACT_ALARM` only for ease of use. Developers will need to check if they should be using the `SCHEDULE_EXACT_ALARM` permission instead
-
 ## [17.1.2]
 
 * [Android] fixed issue [2318](https://github.com/MaikuB/flutter_local_notifications/issues/2318) where an exception could occur on calling the `getNotificationChannels()` method from the `AndroidFlutterLocalNotificationsPlugin` class. This happened when Android found that the audio attributes associated with the channel was null. The plugin will now coalesce the null value to indicate that the usage of the audio is for notifications as per https://developer.android.com/reference/android/media/AudioAttributes#USAGE_NOTIFICATION. On the Dart side, this would correspond to the [AudioAttributesUsage.notification](https://pub.dev/documentation/flutter_local_notifications/latest/flutter_local_notifications/AudioAttributesUsage.html#notification) enum value

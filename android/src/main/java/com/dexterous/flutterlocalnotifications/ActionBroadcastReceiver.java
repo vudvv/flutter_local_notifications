@@ -53,14 +53,8 @@ public class ActionBroadcastReceiver extends BroadcastReceiver {
         FlutterLocalNotificationsPlugin.extractNotificationResponseMap(intent);
 
     if (intent.getBooleanExtra(FlutterLocalNotificationsPlugin.CANCEL_NOTIFICATION, false)) {
-      int notificationId = (int) action.get(FlutterLocalNotificationsPlugin.NOTIFICATION_ID);
-      Object tag = action.get(FlutterLocalNotificationsPlugin.NOTIFICATION_TAG);
-
-      if (tag instanceof String) {
-        NotificationManagerCompat.from(context).cancel((String) tag, notificationId);
-      } else {
-        NotificationManagerCompat.from(context).cancel(notificationId);
-      }
+      NotificationManagerCompat.from(context)
+          .cancel((int) action.get(FlutterLocalNotificationsPlugin.NOTIFICATION_ID));
     }
 
     if (actionEventSink == null) {
