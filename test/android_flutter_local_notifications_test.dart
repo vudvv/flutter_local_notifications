@@ -14,7 +14,6 @@ import 'package:timezone/timezone.dart' as tz;
 import 'utils/date_formatter.dart';
 
 void main() {
-  AndroidFlutterLocalNotificationsPlugin.registerWith();
   TestWidgetsFlutterBinding.ensureInitialized();
   late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
@@ -1955,7 +1954,6 @@ void main() {
               'notification body',
               repeatInterval,
               const NotificationDetails(android: androidNotificationDetails),
-              androidScheduleMode: AndroidScheduleMode.exact,
             );
 
             expect(

@@ -16,6 +16,7 @@ Flutter plugin for displaying local notifications.
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.resource_bundles = {'flutter_local_notifications_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
-  s.ios.deployment_target = '11.0'
+  
+  s.ios.deployment_target = '8.0'
 end
 

@@ -9,7 +9,6 @@ import 'package:timezone/timezone.dart' as tz;
 import 'utils/date_formatter.dart';
 
 void main() {
-  IOSFlutterLocalNotificationsPlugin.registerWith();
   TestWidgetsFlutterBinding.ensureInitialized();
   late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
@@ -305,12 +304,12 @@ void main() {
             );
 
             await flutterLocalNotificationsPlugin.periodicallyShow(
-                1,
-                'notification title',
-                'notification body',
-                repeatInterval,
-                notificationDetails,
-                androidScheduleMode: AndroidScheduleMode.exact);
+              1,
+              'notification title',
+              'notification body',
+              repeatInterval,
+              notificationDetails,
+            );
 
             expect(
               log.last,

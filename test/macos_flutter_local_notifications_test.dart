@@ -9,7 +9,6 @@ import 'package:timezone/timezone.dart' as tz;
 import 'utils/date_formatter.dart';
 
 void main() {
-  MacOSFlutterLocalNotificationsPlugin.registerWith();
   TestWidgetsFlutterBinding.ensureInitialized();
   late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
   group('macOS', () {
@@ -218,7 +217,6 @@ void main() {
               'notification body',
               repeatInterval,
               notificationDetails,
-              androidScheduleMode: AndroidScheduleMode.exact,
             );
 
             expect(
