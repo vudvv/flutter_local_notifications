@@ -25,9 +25,9 @@ android {
     namespace 'com.dexterous.flutterlocalnotifications'
     compileSdk 34
     compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
         coreLibraryDesugaringEnabled true
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
     }
 
     defaultConfig {
